@@ -42,7 +42,7 @@ Given a stream address it is not possible rewind to the start of the stream.
 
 The stream is tracked by transaction id. Each append tranaction can use a different address. Write access handover can be done by appeding a zero length chunck to the stream. Multisig addresses can also be used.
 
-## A stream never runs of funds
+## A stream never runs out of funds
 
 Appending to a stream just requries that the first output is spent. Extra inputs can be added to provide the funds neccary to pay for the fee.
 
