@@ -10,13 +10,13 @@ Create a potentially never-ending byte stream channel on the Bitcoin Blockchain.
 
 The byte stream is divided into chunks small enough to fit into an OP_RETURN output. Each chunk can be of a different length. Each chunk is stored in a separate transaction.
 
-To kinds of transactions exists.
+Two kinds of transactions exists.
 
-## End of stream
+## End of stream transaction
 
 The first output (index 0) is an OP_RETURN containing the last chunck of the stream. The payload is just a single pushdata. There is no prefix. The payload may be zero length.
 
-## Append to stream
+## Append to stream transaction
 
 The transaction must have at least two outputs.
 
@@ -26,4 +26,24 @@ The second output (index 1) is an OP_RETURN appending data to the stream. he pay
 
 ## Stream address
 
-A stream is referenced by a transaction id and an optional offset into the data chunk.
+A stream is referenced by a transaction id and an optional offset into the data chunk. How to encode this is out of scope for this protocol.
+
+# Note
+
+## No protocol prefix
+
+This protocol only concerns writing to the stream. Discovery and naming of stream is out of scope. Thus it needs no prefix. 
+
+## Forward reading only
+
+Given a stream address it is not possible rewind to the start of the stream.
+
+## Addresses are ignored
+
+The stream is tracked by transaction id. Each append tranaction can use a different address. Write access can be done by appeding a zero length chunck to the stream. Multisig address can also be used.
+
+
+
+
+
+
