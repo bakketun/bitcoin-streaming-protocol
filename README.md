@@ -20,9 +20,9 @@ The first output (index 0) is an OP_RETURN containing the last chunck of the str
 
 The transaction must have at least two outputs.
 
-The first output (index 0) has a none zero value. The spending transaction of this output is the continuation of the stream. If the output is unspent the stream is open for appending. There is no restrictions on the script.
+The first output (index 0) has a none zero value. The spending transaction of this output is the continuation of the stream. If the output is unspent the stream is open for appending. There is no restrictions on the script. If the spending transaction does not follow rules of this speficiation the stream is terminated with a read error.
 
-The second output (index 1) is an OP_RETURN appending data to the stream. he payload is just a single pushdata. There is no prefix. The payload may be zero length.
+The second output (index 1) is an OP_RETURN appending data to the stream. The payload is just a single pushdata. There is no prefix. The payload may be zero length.
 
 ## Stream address
 
