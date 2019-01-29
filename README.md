@@ -44,6 +44,6 @@ The stream is tracked by transaction id. Each append tranaction can use a differ
 
 ## A stream never runs out of funds
 
-Appending to a stream just requries that the first output is spent. Extra inputs can be added to provide the funds neccary to pay for the fee.
+Appending to a stream just requries that the first output is spent. Extra inputs can be added to provide the funds necessary to pay for the fee.
 
 
